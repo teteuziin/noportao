@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Background: Deep Obsidian Navy -->
+  <rect width="512" height="512" rx="120" fill="#0B1120" />
+  
+  <!-- Subtle border for contrast -->
+  <rect width="504" height="504" x="4" y="4" rx="116" fill="none" stroke="#1E293B" stroke-width="2" />
+
+  <!-- Single Iconic Element: The Pin-Portal -->
+  <g transform="translate(256, 240)">
+    <!-- Outer Location Pin Shape (Solid, Bold, Clean) -->
+    <path d="M 0 -150 
+             C -85 -150, -150 -85, -150 0 
+             C -150 75, -50 160, -8 200 
+             C -4 204, 4 204, 8 200 
+             C 50 160, 150 75, 150 0 
+             C 150 -85, 85 -150, 0 -150 Z" 
+          fill="#FFB800" />
+
+    <!-- Interior Portal Arch (The Gateway Cutout - Negative Space) -->
+    <!-- Doorway arch that cuts cleanly through to the deep background -->
+    <path d="M -54 50 
+             V -20 
+             C -54 -50, -24 -74, 0 -74 
+             C 24 -74, 54 -50, 54 -20 
+             V 50 
+             Z" 
+          fill="#0B1120" />
+
+    <!-- Clock / Countdown Precision Accent: 3-Minute Notch -->
+    <!-- Minimalist white tick pointing to the doorway entrance -->
+    <circle cx="0" cy="-20" r="14" fill="#FFFFFF" />
+    <path d="M 0 -20 L 0 -50" stroke="#FFB800" stroke-width="5" stroke-linecap="round" />
+    <path d="M 0 -20 L 22 -20" stroke="#FFB800" stroke-width="5" stroke-linecap="round" />
+  </g>
+</svg>

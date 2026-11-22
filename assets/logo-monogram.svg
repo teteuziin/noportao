@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Premium Dark Slate Ground -->
+  <rect width="512" height="512" rx="120" fill="#0F172A" />
+  
+  <g transform="translate(146, 136)">
+    <!-- Left Pillar (Gate Post / Origin) -->
+    <rect x="0" y="0" width="52" height="240" rx="26" fill="#38BDF8" />
+
+    <!-- Center Dynamic Sweep (The Gate Swinging Open / Forward Arrow) -->
+    <path d="M 30 15 
+             L 190 225" 
+          stroke="#FFB800" 
+          stroke-width="54" 
+          stroke-linecap="round" />
+
+    <!-- Right Pillar (Gate Post / Destination) -->
+    <rect x="168" y="0" width="52" height="240" rx="26" fill="#FFFFFF" />
+
+    <!-- Location Pin Dot on top-right (Arrival Point) -->
+    <circle cx="194" cy="-24" r="16" fill="#FFB800" />
+  </g>
+</svg>

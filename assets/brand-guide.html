@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoPortão — Identidade Visual Refinada (Versão 2.0)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Regra 60-30-10 de Harmonia */
+      --brand-accent: #FFB800;       /* 10% Sotaque da Marca (Amarelo Solar) */
+      --brand-accent-hover: #E0A200;
+      
+      --neutral-dark: #0B1120;       /* 60% Fundo Principal (Obsidian Slate) */
+      --surface-dark: #161F30;       /* Cards e Paineis */
+      --border-dark: #233044;
+      
+      --text-white: #FFFFFF;         /* 30% Tipografia Principal */
+      --text-muted: #94A3B8;         /* Subtítulos e Rótulos */
+
+      /* Cores Funcionais Restritas (Apenas para Alertas) */
+      --status-ok: #10B981;
+      --status-alert: #F97316;
+      --status-danger: #F43F5E;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--neutral-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .pill-badge {
+      display: inline-block;
+      background: rgba(255, 184, 0, 0.12);
+      color: var(--brand-accent);
+      font-weight: 700;
+      font-size: 12px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      letter-spacing: 1.2px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255, 184, 0, 0.25);
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 8px;
+    }
+
+    h1 span {
+      color: var(--brand-accent);
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 40px 0 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-left: 4px solid var(--brand-accent);
+      padding-left: 14px;
+    }
+
+    /* Comparison Grid */
+    .concepts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .concept-card {
+      background: var(--surface-dark);
+      border-radius: 20px;
+      padding: 28px;
+      border: 1px solid var(--border-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .concept-card.featured {
+      border: 2px solid var(--brand-accent);
+    }
+
+    .concept-tag {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--brand-accent);
+      color: var(--neutral-dark);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    .concept-card img, .concept-card svg {
+      width: 100%;
+      max-width: 280px;
+      height: 280px;
+      object-fit: contain;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+
+    .concept-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .concept-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 380px;
+    }
+
+    /* Full Lockup Banner */
+    .lockup-banner {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 50px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .lockup-banner img, .lockup-banner svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Color Harmony System (60-30-10) */
+    .harmony-container {
+      background: var(--surface-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 50px;
+    }
+
+    .harmony-bar {
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      overflow: hidden;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .bar-60 { width: 60%; background: var(--neutral-dark); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; border-right: 1px solid var(--border-dark); }
+    .bar-30 { width: 30%; background: #F8FAFC; color: var(--neutral-dark); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+    .bar-10 { width: 10%; background: var(--brand-accent); color: var(--neutral-dark); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; }
+
+    .palette-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .color-block {
+      background: rgba(0,0,0,0.25);
+      border-radius: 14px;
+      padding: 18px;
+      border: 1px solid var(--border-dark);
+    }
+
+    .swatch-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      margin-bottom: 12px;
+      border: 2px solid rgba(255,255,255,0.1);
+    }
+
+    .color-label {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .hex-code {
+      font-family: monospace;
+      font-size: 13px;
+      color: var(--brand-accent);
+      background: rgba(255, 184, 0, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .color-role {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Small Screen adaptations */
+    @media (max-width: 768px) {
+      .concepts-grid { grid-template-columns: 1fr; }
+      .palette-columns { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="pill-badge">Versão 2.0 • Mais Limpa, Icônica e Profissional</div>
+      <h1>No<span>Portão</span></h1>
+      <p class="tagline">O fim da espera no ponto e da culpa injusta.</p>
+    </header>
+
+    <!-- LOGOS REFINADOS -->
+    <h2 class="section-title">1. Propostas Refinadas: O Conceito "Pin-Portal"</h2>
+    
+    <div class="concepts-grid">
+      <!-- Conceito Principal Ilustrado -->
+      <div class="concept-card featured">
+        <span class="concept-tag">Master Logo</span>
+        <img src="noportao-master-logo.jpg" alt="NoPortão Master Logo">
+        <div class="concept-title">Logo Master (Símbolo + Tipografia)</div>
+        <p class="concept-desc">
+          O Pin de localização fundido ao portal em Amarelo Solar (#FFB800) sobre Obsidian Slate (#0B1120), com a tipografia 'NoPortão' limpa e moderna.
+        </p>
+      </div>
+
+      <!-- App Icon Squircle -->
+      <div class="concept-card">
+        <span class="concept-tag">App Mobile</span>
+        <img src="noportao-app-icon.jpg" alt="NoPortão App Icon">
+        <div class="concept-title">Ícone de Aplicativo (iOS / Android)</div>
+        <p class="concept-desc">
+          Aplicação do símbolo em formato squircle para a tela inicial do celular dos motoristas e pais. Alto contraste e assimilação imediata.
+        </p>
+      </div>
+    </div>
+
+    <!-- Variação Linear -->
+    <div style="background: var(--surface-dark); border: 1px solid var(--border-dark); border-radius: 20px; padding: 24px; margin-bottom: 40px; text-align: center;">
+      <h3 style="font-size: 16px; color: var(--text-muted); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">Variação Linear (Traço Contínuo)</h3>
+      <img src="noportao-linear-logo.jpg" alt="NoPortão Linear Logo" style="max-height: 220px; border-radius: 12px; margin: 0 auto; display: block;">
+    </div>
+
+    <!-- BANNER HORIZONTAL -->
+    <h2 class="section-title">2. Aplicação Horizontal (Contratos, Relatórios e Web)</h2>
+    <div class="lockup-banner">
+      <img src="logo-pro-horizontal.svg" alt="NoPortão Horizontal Logo">
+    </div>
+
+    <!-- HARMONIA DE CORES -->
+    <h2 class="section-title">3. Sistema de Harmonia de Cores (Regra 60-30-10)</h2>
+    <div class="harmony-container">
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
+        Para evitar o efeito "arco-íris de carnaval", a paleta agora segue a proporção áurea de design corporativo:
+      </p>
+
+      <div class="harmony-bar">
+        <div class="bar-60">60% Fundo & Estrutura (Obsidian Slate)</div>
+        <div class="bar-30">30% Tipografia (Branco & Prata)</div>
+        <div class="bar-10">10% Marca</div>
+      </div>
+
+      <div class="palette-columns">
+        
+        <!-- Cor 1 -->
+        <div class="color-block">
+          <div class="swatch-circle" style="background: #0B1120;"></div>
+          <div class="color-label">Obsidian Slate (60%)</div>
+          <div class="hex-code">#0B1120</div>
+          <div class="color-role">Fundo nobre do app. Substitui o preto puro por um tom azulado escuro muito mais profissional.</div>
+        </div>
+
+        <!-- Cor 2 -->
+        <div class="color-block">
+          <div class="swatch-circle" style="background: #FFFFFF;"></div>
+          <div class="color-label">Pure White / Slate 100 (30%)</div>
+          <div class="hex-code">#FFFFFF • #F8FAFC</div>
+          <div class="color-role">Textos, cards em modo claro e tabelas de relatórios. Garante leitura perfeita no trânsito.</div>
+        </div>
+
+        <!-- Cor 3 -->
+        <div class="color-block">
+          <div class="swatch-circle" style="background: #FFB800;"></div>
+          <div class="color-label">Solar Amber (10%)</div>
+          <div class="hex-code">#FFB800</div>
+          <div class="color-role">O sotaque da marca: logotipo, botões principais de ação e destaque de pontualidade.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
